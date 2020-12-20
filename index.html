@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<title>Poolside Press</title>
+	<link rel="icon" href="sun-pika.png">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<style>
+
+		@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap');
+
+		body { 
+			font-family: 'Inconsolata', monospace; 
+			font-weight: 700; 
+			text-align: center; 
+			margin: 0; 
+		}
+
+		header { 
+			background-image: url(img/beige.png); 
+			background-size: 100px; 
+			top: 0; 
+			padding: 25px; 
+			text-align: left; 
+			background-color: #cabaa6; 
+			z-index: 100; 
+			position: relative; 
+			text-align: left;
+		}
+
+		a { 
+			font-size: 1em; 
+			text-decoration: none; 
+			color: #008ae0; 
+			margin-left: 25px; 
+			border: 3px solid transparent; 
+			border-image: url(img/tiles/yellow.png) 30 stretch; 
+			padding: 5px 10px; 
+			float:right; 
+			background-image: url(img/tiles/yellow.png);
+		}
+
+		a:hover { 
+			background-image: none; 
+			color: #cabaa6; 
+			background-color: #fff; 
+		}
+
+		div#bod { 
+			position: fixed; 
+			top: 0; 
+			left: 0; 
+			width: 100%; 
+			z-index: -1; 
+		}
+
+		div.blue-tile { 
+			background-image: url(img/tiles/medium-blue.png); 
+			background-size: 50px; 
+			margin: 5px; 
+			background-color: #2d46ff; 
+			width: 75px; 
+			height: 75px; 
+			border-radius: 5px; 
+			display: inline-block;
+		}
+
+		div.lightblue-tile { 
+			background-image: url(img/tiles/sea-foam.png); 
+			background-size: 50px; 
+			margin: 5px; 
+			background-color: #2dafff; 
+			width: 75px; 
+			height: 75px; 
+			border-radius: 5px; 
+			display: inline-block;
+		}
+
+		div.bright-tile { 
+			background-image: url(img/tiles/bright-blue.png); 
+			background-size: 50px; 
+			margin: 5px; 
+			background-color: #2dffe6; 
+			width: 75px; 
+			height: 75px; 
+			border-radius: 5px; 
+			display: inline-block; 
+		}
+
+		div.sun { 
+			background-image: url(img/tiles/yellow.png); 
+			background-size: contain; 
+			border-radius: 50%; 
+			width: 200px; 
+			height: 200px; 
+			background-color: #FFE62D; 
+			margin-left: auto; 
+			margin-right: auto; 
+			display: block; 
+			z-index: 100; 
+			position: relative; 
+			color:#FFE62D; 
+			box-shadow: 0 10px 75px #ff7d2d, 0 20px 100px #FFE62D; 
+			margin-top: 10%; 
+		} 
+
+		div#overlay { 
+			position: fixed; 
+			top: 0; 
+			left: 0; 
+			height: 100%; 
+			width: 100%; 
+			background-color: rgba(0,0,0,0); 
+		} 
+
+		p#welcome { 
+			background-color: #fff; 
+			font-size: 1.25em; 
+			color: #506986; 
+			display: inline-block; 
+			text-decoration: underline wavy #2dafff; 
+			padding: 5px 10px; 
+			margin-bottom: 0px; 
+			margin-top: 0px;
+		}
+
+
+		@media screen and (max-width: 720px) { 
+
+			body { margin: 0; }
+
+			header { text-align: center; }
+
+			p { display: block; }
+
+			p#welcome { margin-bottom: 7.5px; }
+
+			a { 
+				display: block; 
+				margin-left: 0; 
+				margin-bottom: 5px; 
+				float: none;
+			}
+
+			div#bod div { 
+				width: 40px; 
+				height: 40px; 
+				margin: 2px; 
+			}
+
+		}
+
+
+	</style>
+</head>
+<body id="" class="a">
+	<header>
+		<p id="welcome" class="circ01">Welcome to poolside.</p>
+		<a id="about" href="about.html">about us</a>
+		<a id="upcoming" href="projects.html">projects</a>
+	</header>
+
+	<div id="sun" class="sun"></div>
+	<div id="bod">
+		<div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div><div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div><div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div><div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div><div class="blue-tile"></div><div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div><div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div><div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div><div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div><div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div><div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div><div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div><div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div><div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div><div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div><div class="blue-tile"></div><div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div><div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div><div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div><div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div><div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div><div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div>
+	</div>
+
+	<div id="overlay"></div>
+</body>
+<script>
+
+	if (new Date().getHours() >= 8 || new Date().getHours() <= 7) {
+		document.getElementById("sun").style.backgroundColor = "#ccc";
+		document.getElementById("sun").style.backgroundImage = "url(img/grey.png)";
+		document.getElementById("sun").style.backgroundSize = "50px"
+		document.getElementById("sun").style.boxShadow = "0 10px 75px #fff";
+		document.getElementById("bod").style.backgroundColor = "#000f7b";
+		document.getElementById("about").style.backgroundImage = "url(img/grey.png)";
+		document.getElementById("about").style.backgroundSize = "50px";
+		document.getElementById("about").style.color = "#fff";
+		document.getElementById("about").style.borderImage = "url(img/grey.png) 30 stretch";
+		document.getElementById("upcoming").style.backgroundImage = "url(img/grey.png)";
+		document.getElementById("upcoming").style.backgroundSize = "50px";
+		document.getElementById("upcoming").style.color = "#fff";
+		document.getElementById("upcoming").style.borderImage = "url(img/grey.png) 30 stretch";
+		document.getElementById("overlay").style.backgroundColor = "rgba(0,0,0,.5)";
+}
+
+</script>
+</html>
