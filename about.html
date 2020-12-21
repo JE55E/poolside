@@ -20,9 +20,15 @@ body {
 }
 
 header { text-align: center; }
+
 a { 
 	text-decoration: underline wavy rgba(202, 186, 166, 1); 
 	color: #fffdf1; 
+}
+
+a:hover { 
+	color:#fff; 
+	text-decoration: underline solid rgba(202, 186, 166, 1); 
 }
 
 a#home { 
@@ -43,21 +49,19 @@ a#home:hover {
 	background-size: 50px; 
 }
 
+a#projects {
+	text-decoration: underline dashed #fff;
+}
+
+a#projects:hover {
+	text-decoration: underline solid #ccc;
+}
+
 #about { color: #fff; }
-a:hover { color:#2d46ff; }
+
 p { 
 	color: #fff; 
 	padding: 5px 50px;
-}
-
-.weatherwidget-io { 
-	display: block; 
-	width: 100px; 
-	height: 10px; 
-	margin-left: auto; 
-	margin-right: auto; 
-	padding: 0; 
-	bottom: 0; 
 }
 
 @media screen and (max-width: 720px) { 
@@ -69,7 +73,7 @@ body { font-size: 16px; }
 <body>
 <header><a id="home" href="index.html"></a></header>
 
-<p id="about">Poolside is a solar-powered micro-press in Los Angeles run by Alexis Demetriades and Jesse Cahn Thompson. Founded in August 2020, the studio runs a refurbished Risograph duplicator to produce publications and prints with arists around the world who share our love for handicraft and technology, both new and old.  
+<p id="about">Poolside is a solar-powered micro-press in Los Angeles run by Alexis Demetriades and Jesse Cahn Thompson. Founded in August 2020, the studio runs a refurbished Risograph duplicator to produce <a id="projects" href="projects.html">publications and prints</a> with arists around the world who share our love for handicraft and technology, both new and old.  
 </p>	
 
 <p>Interested in a collaboration? <span style="font-size: 1.25em;">☞ </span> <span style="color: #fff; text-decoration:underline wavy #2dffe6;"><a href="mailto:info@poolside.press" target="_blank">info@poolside.press</a></span></p>
