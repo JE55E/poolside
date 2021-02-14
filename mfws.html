@@ -12,8 +12,8 @@
 
 body { 
 	font-family: 'Inconsolata', monospace;
-	text-shadow: 0 0 2px #789dfd;
-	color: #2d66fc;
+	text-shadow: 0 0 1px #000;
+	color: #000;
 }
 
 header {
@@ -53,6 +53,13 @@ a:hover {
 	color: #000; 
 }
 
+#collection-text {
+	/*text-shadow: 0 0 2px #789dfd;
+	color: #2d66fc;*/
+	text-shadow: 0 0 2px #000;
+	color: #000;
+}
+
 #page-wrap {
 	display: block;
 	margin-right: auto;
@@ -83,7 +90,9 @@ p.print-number {
 	font-size: .75em;
 	font-style: italic;
 	margin-bottom: 10px;
-	color: #2d66fc;
+	/*color: #2d66fc;*/
+	color: #000;
+	text-shadow: 0 0 1px #000;
 }
 
 .img-wrap {
@@ -112,7 +121,7 @@ img {
 <body>
 	<header><a id="home" href="index.html"></a></header>
 	<div id="page-wrap">
-		<p><i>MAKE FRIENDS WITH SPIDERS</i> COLLECTION</p>
+		<p id="collection-text">• <i>MAKE FRIENDS WITH SPIDERS</i> COLLECTION •</p>
 		<!-- SPIDERS DIVs -->
 		<div class="project-wrap">
 			<div class="img-wrap">
