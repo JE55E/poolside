@@ -37,7 +37,7 @@
 			border: 3px solid transparent; 
 			border-image: url(img/tiles/yellow.png) 30 stretch; 
 			padding: 5px 10px; 
-			float:right; 
+			float: right; 
 			background-image: url(img/tiles/yellow.png);
 		}
 
@@ -118,7 +118,7 @@
 			font-size: 1.25em; 
 			color: #506986; 
 			display: inline-block; 
-			text-decoration: underline wavy #2dafff; 
+			text-decoration: underline wavy #789dfd; 
 			padding: 5px 10px; 
 			margin-bottom: 0px; 
 			margin-top: 0px;
@@ -166,7 +166,7 @@
 	<div id="overlay"></div>
 </body>
 <script>
-//Set up style changes for nighttime at the pool
+// Nighttime by the pool
 	if (new Date().getHours() >= 18 || new Date().getHours() <= 7) {
 		document.getElementById("sun").style.backgroundColor = "#ccc";
 		document.getElementById("sun").style.backgroundImage = "url(img/grey.png)";
@@ -182,6 +182,7 @@
 		document.getElementById("upcoming").style.color = "#fff";
 		document.getElementById("upcoming").style.borderImage = "url(img/grey.png) 30 stretch";
 		document.getElementById("overlay").style.backgroundColor = "rgba(0,0,0,.5)";
+		document.getElementById("welcome").style.color = "#789dfd";
 }
 
 </script>
