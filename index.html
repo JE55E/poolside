@@ -9,7 +9,7 @@
 
 	<style>
 		@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap');
-
+		@import url('https://fonts.googleapis.com/css2?family=Sunshiney&display=swap');
 		body { 
 			font-family: 'Inconsolata', monospace; 
 			font-weight: 700; 
@@ -18,12 +18,10 @@
 		}
 
 		header { 
-			/*background-image: url(img/beige.png); */
 			background-size: 100px; 
 			top: 0; 
-			padding: 25px; 
+			padding: 25px 25px 50px 25px; 
 			text-align: left; 
-			/*background-color: #cabaa6; */
 			z-index: 100; 
 			position: relative; 
 			text-align: left;
@@ -39,6 +37,7 @@
 			padding: 5px 10px; 
 			float: right; 
 			background-image: url(img/tiles/yellow.png);
+			font-weight: 400;
 		}
 
 		a:hover { 
@@ -46,6 +45,15 @@
 			color: #789dfd; 
 			background-color: #fff; 
 			border: 3px solid #fff;
+		}
+
+		div.circ01 {
+		  position: fixed;
+		  bottom: 100px;
+		}
+
+		div.circ01 img {
+			width: 125px;
 		}
 
 		div#bod { 
@@ -61,8 +69,8 @@
 			background-size: 50px; 
 			margin: 5px; 
 			background-color: #2d46ff; 
-			width: 75px; 
-			height: 75px; 
+			width: 60px; 
+			height: 60px; 
 			border-radius: 5px; 
 			display: inline-block;
 		}
@@ -72,8 +80,8 @@
 			background-size: 50px; 
 			margin: 5px; 
 			background-color: #2dafff; 
-			width: 75px; 
-			height: 75px; 
+			width: 60px; 
+			height: 60px; 
 			border-radius: 5px; 
 			display: inline-block;
 		}
@@ -83,8 +91,8 @@
 			background-size: 50px; 
 			margin: 5px; 
 			background-color: #2dffe6; 
-			width: 75px; 
-			height: 75px; 
+			width: 60px; 
+			height: 60px; 
 			border-radius: 5px; 
 			display: inline-block; 
 		}
@@ -127,6 +135,23 @@
 			box-shadow: 1px 1px 1px #ccc;
 		}
 
+		div#name { 
+			 font-family: 'Sunshiney', cursive;
+			-ms-transform: rotate(-20deg); /* IE 9 */
+			-webkit-transform: rotate(-20deg); /* Safari 3-8 */
+			transform: rotate(-20deg);
+			position: fixed; 
+			border: none; 
+			top: 25px; 
+			left: 25px;
+			display: inline-block; 
+			z-index: 3; 
+			margin-left:15px;
+			font-size: 3em;
+			color: rgba(0,0,0,.25);
+			/*text-shadow: 1px 1px 4px #000;*/
+		}
+
 
 		@media screen and (max-width: 720px) { 
 
@@ -134,15 +159,34 @@
 
 			header { text-align: center; }
 
+			div.circ01 img {
+				width: 100px;
+			}
+
 			p { display: block; }
 
 			p#welcome { margin-bottom: 7.5px; }
 
+			div#name {
+				font-size: 2em;
+				z-index: 50;
+				left: 10px;
+			}
+
 			a { 
 				display: block; 
-				margin-left: 0; 
+				margin-left: auto;
+				margin-right: auto; 
 				margin-bottom: 5px; 
+				border: none;
 				float: none;
+				/*width: 33%;*/
+				color: #789dfd;
+				background-image: linear-gradient(to left, #fff, #fff, rgba(0,0,0,0));
+			}
+
+			a:hover {
+				border: none;
 			}
 
 			div#bod div { 
@@ -160,6 +204,8 @@
 		<a id="about" href="about.html">about</a>
 		<a id="shop" href="shop.html">shop</a>
 	</header>
+	<div class="circ01 isolate"><img src="img/floaty.png"></div>
+	<!-- <div id="name">poolside</div> -->
 
 	<div id="sun" class="sun"></div>
 	<div id="bod">
@@ -188,5 +234,47 @@
 		document.getElementById("welcome").style.color = "#789dfd";
 }
 
+// FLOATY
+
+$(document).ready(function(){
+	animateDiv();
+});
+
+function makeNewPosition(){
+    // Get viewport dimensions (remove the dimension of the div)
+    var h = $(window).height() - 5;
+    var w = $(window).width() - 5;
+    
+    var nh = Math.floor(Math.random() * h);
+    var nw = Math.floor(Math.random() * w);
+    
+    return [nh,nw];      
+}
+
+function animateDiv(){
+    var newA = makeNewPosition();
+
+    var oldA = $('.circ01').offset();
+
+    var speedA = calcSpeed([oldA.top, oldA.left], newA);
+
+    $('.circ01').animate({ top: newA[0], left: newA[1] }, speedA, function(){
+      animateDiv();        
+    });     
+	};
+
+function calcSpeed(prev, next) {
+    
+    var x = Math.abs(prev[1] - next[1]);
+    var y = Math.abs(prev[0] - next[0]);
+    
+    var greatest = x > y ? x : y;
+    
+    var speedModifier = 0.02;
+
+    var speed = Math.ceil(greatest/speedModifier);
+
+    return speed;
+}
 </script>
 </html>
