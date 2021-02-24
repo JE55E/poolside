@@ -18,12 +18,12 @@
 		}
 
 		header { 
-			background-image: url(img/beige.png); 
+			/*background-image: url(img/beige.png); */
 			background-size: 100px; 
 			top: 0; 
 			padding: 25px; 
 			text-align: left; 
-			background-color: #cabaa6; 
+			/*background-color: #cabaa6; */
 			z-index: 100; 
 			position: relative; 
 			text-align: left;
@@ -32,7 +32,7 @@
 		a { 
 			font-size: 1em; 
 			text-decoration: none; 
-			color: #008ae0; 
+			color: #789dfd; 
 			margin-left: 25px; 
 			border: 3px solid transparent; 
 			border-image: url(img/tiles/yellow.png) 30 stretch; 
@@ -43,8 +43,9 @@
 
 		a:hover { 
 			background-image: none; 
-			color: #cabaa6; 
+			color: #789dfd; 
 			background-color: #fff; 
+			border: 3px solid #fff;
 		}
 
 		div#bod { 
@@ -116,12 +117,14 @@
 
 		p#welcome { 
 			font-size: 1.25em; 
-			color: #506986; 
+			color: #789dfd; 
 			display: inline-block; 
 			text-decoration: underline wavy #789dfd; 
 			padding: 5px 10px; 
 			margin-bottom: 0px; 
 			margin-top: 0px;
+			background-color: #fff;
+			box-shadow: 1px 1px 1px #ccc;
 		}
 
 
@@ -153,9 +156,9 @@
 </head>
 <body id="" class="a">
 	<header>
-		<p id="welcome" class="circ01">Welcome to Poolside</p>
-		<a id="about" href="about.html">about us</a>
-		<a id="upcoming" href="projects.html">projects</a>
+		<!-- <p id="welcome" class="circ01"><i>Welcome to Poolside</i></p> -->
+		<a id="about" href="about.html">about</a>
+		<a id="shop" href="shop.html">shop</a>
 	</header>
 
 	<div id="sun" class="sun"></div>
@@ -177,10 +180,10 @@
 		document.getElementById("about").style.backgroundSize = "50px";
 		document.getElementById("about").style.color = "#fff";
 		document.getElementById("about").style.borderImage = "url(img/grey.png) 30 stretch";
-		document.getElementById("upcoming").style.backgroundImage = "url(img/grey.png)";
-		document.getElementById("upcoming").style.backgroundSize = "50px";
-		document.getElementById("upcoming").style.color = "#fff";
-		document.getElementById("upcoming").style.borderImage = "url(img/grey.png) 30 stretch";
+		document.getElementById("shop").style.backgroundImage = "url(img/grey.png)";
+		document.getElementById("shop").style.backgroundSize = "50px";
+		document.getElementById("shop").style.color = "#fff";
+		document.getElementById("shop").style.borderImage = "url(img/grey.png) 30 stretch";
 		document.getElementById("overlay").style.backgroundColor = "rgba(0,0,0,.5)";
 		document.getElementById("welcome").style.color = "#789dfd";
 }
