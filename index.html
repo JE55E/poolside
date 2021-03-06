@@ -10,11 +10,14 @@
 	<style>
 		@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap');
 		@import url('https://fonts.googleapis.com/css2?family=Sunshiney&display=swap');
+		
+
 		body { 
 			font-family: 'Inconsolata', monospace; 
 			font-weight: 700; 
       margin: 0; 
 			text-align: center; 
+			background-color: #dcf5f5;
 			/*cursor:url(img/leafy-try.png) 15 -10, auto;*/
 		}
 
@@ -30,28 +33,80 @@
 
 		a { 
 			font-size: 1em; 
+			font-weight: 600;
 			text-decoration: none; 
-			color: #789dfd; 
+			color: #136BB2; 
 			margin-left: 25px; 
-			border: 3px solid transparent; 
-			border-image: url(img/tiles/yellow.png) 30 stretch; 
-			padding: 5px 10px; 
+			border: 3px solid #136BB2;
+			padding: 5px 20px; 
 			float: right; 
-			background-image: url(img/tiles/yellow.png);
-			font-weight: 400;
+			/*background-image: url(img/tiles/yellow.png);*/
+			background-color: #fff;
+			box-shadow: 1px 1px 2px #dcf5f5;
+			border-radius: 50px;
 		}
 
 		a:hover { 
 			background-image: none; 
 			color: #789dfd; 
-			background-color: #fff; 
-			border: 3px solid #fff;
+			background-color: #dcf5f5; 
+			border: 3px solid #136BB2;
 		}
 
+		a#about {
+			
+		}
+
+		a#store {
+
+		}
+		/*FLOAT*/
 		div.circ01 {
 		  position: fixed;
 		  top: 250px;
 		  left: 50%;
+
+		  -webkit-animation-name: spin;
+	    -webkit-animation-duration: 24s;
+	    -webkit-animation-iteration-count: infinite;
+	    -webkit-animation-timing-function: linear;
+	    -moz-animation-name: spin;
+	    -moz-animation-duration: 24s;
+	    -moz-animation-iteration-count: infinite;
+	    -moz-animation-timing-function: linear;
+	    -ms-animation-name: spin;
+	    -ms-animation-duration: 24s;
+	    -ms-animation-iteration-count: infinite;
+	    -ms-animation-timing-function: linear;
+	    
+	    animation-name: spin;
+	    animation-duration: 24s;
+	    animation-iteration-count: infinite;
+	    animation-timing-function: linear;
+		}
+
+		@-ms-keyframes spin {
+    from { -ms-transform: rotate(0deg); }
+    to { -ms-transform: rotate(360deg); }
+		}
+
+		@-moz-keyframes spin {
+    from { -moz-transform: rotate(0deg); }
+    to { -moz-transform: rotate(360deg); }
+		}
+
+		@-webkit-keyframes spin {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+		}
+
+		@keyframes spin {
+    	from {
+        transform:rotate(0deg);
+    	}
+    to {
+        transform:rotate(360deg);
+      }
 		}
 
 		div.circ01 img {
@@ -69,10 +124,10 @@
 		div.blue-tile { 
 			background-image: url(img/tiles/medium-blue.png); 
 			background-size: contain; 
-			margin: 6px; 
+			margin: 2.5px; 
 			background-color: #2d46ff; 
-			width: 60px; 
-			height: 60px; 
+			width: 50px; 
+			height: 50px; 
 			border-radius: 5px; 
 			display: inline-block;
 		}
@@ -80,10 +135,10 @@
 		div.lightblue-tile { 
 			background-image: url(img/tiles/sea-foam.png); 
 			background-size: contain; 
-			margin: 6px; 
+			margin: 2.5px; 
 			background-color: #2dafff; 
-			width: 60px; 
-			height: 60px; 
+			width: 50px; 
+			height: 50px; 
 			border-radius: 5px; 
 			display: inline-block;
 		}
@@ -91,10 +146,10 @@
 		div.bright-tile { 
 			background-image: url(img/tiles/bright-blue.png); 
 			background-size: contain; 
-			margin: 6px; 
+			margin: 2.5px; 
 			background-color: #2dffe6; 
-			width: 60px; 
-			height: 60px; 
+			width: 50px; 
+			height: 50px; 
 			border-radius: 5px; 
 			display: inline-block; 
 		}
@@ -151,10 +206,9 @@
 			margin-left:15px;
 			font-size: 3em;
 			color: rgba(0,0,0,.25);
-			/*text-shadow: 1px 1px 4px #000;*/
 		}
 
-
+		/*media queries*/
 		@media screen and (max-width: 720px) { 
 
 			body { margin: 0; }
@@ -180,15 +234,15 @@
 				margin-left: auto;
 				margin-right: auto; 
 				margin-bottom: 5px; 
-				border: none;
+				border: 3px solid #136BB2;
 				float: none;
-				/*width: 33%;*/
-				color: #789dfd;
-				background-image: linear-gradient(to left, #fff, #fff, rgba(0,0,0,0));
+				width: 33%;
+				color: #136BB2;
+				/*background-image: linear-gradient(to left, #fff, #fff, rgba(0,0,0,0));*/
 			}
 
 			a:hover {
-				border: none;
+				border: 3px solid #136BB2;
 			}
 
 			div#bod div { 
@@ -211,7 +265,7 @@
 
 	<div id="sun" class="sun"></div>
 	<div id="bod">
-		<div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div><div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div><div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div><div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div><div class="blue-tile"></div><div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div><div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div><div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div><div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div><div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div><div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div><div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div><div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div><div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div><div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div><div class="blue-tile"></div><div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div><div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div><div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div><div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div><div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div><div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="lightblue-tile"></div> <div class="blue-tile"></div> <div class="blue-tile"></div> <div class="bright-tile"></div> <div class="lightblue-tile"></div> <div class="bright-tile"></div>
+		<div class="blue-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="blue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="blue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="blue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="blue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="blue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="blue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="blue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="bright-tile"></div><div class="blue-tile"></div><div class="blue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="blue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="blue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="bright-tile"></div><div class="blue-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="blue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="blue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="blue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="blue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="blue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="bright-tile"></div><div class="blue-tile"></div><div class="blue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="bright-tile"></div><div class="blue-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="blue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="bright-tile"></div><div class="blue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="bright-tile"></div><div class="blue-tile"></div><div class="blue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="blue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="bright-tile"></div><div class="blue-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="blue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="blue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="blue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="blue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="blue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="blue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="blue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="bright-tile"></div><div class="blue-tile"></div><div class="blue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="blue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="blue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="bright-tile"></div><div class="blue-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="blue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="blue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="blue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="blue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="blue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="bright-tile"></div><div class="blue-tile"></div><div class="blue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="bright-tile"></div><div class="blue-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="blue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="bright-tile"></div><div class="blue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="bright-tile"></div><div class="blue-tile"></div><div class="blue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="lightblue-tile"></div><div class="blue-tile"></div><div class="blue-tile"></div><div class="bright-tile"></div><div class="lightblue-tile"></div><div class="bright-tile"></div>
 	</div>
 
 	<div id="overlay"></div>
@@ -224,14 +278,14 @@
 		document.getElementById("sun").style.backgroundSize = "50px"
 		document.getElementById("sun").style.boxShadow = "0 10px 75px #fff";
 		document.getElementById("bod").style.backgroundColor = "#000f7b";
-		document.getElementById("about").style.backgroundImage = "url(img/grey.png)";
+		document.getElementById("about").style.backgroundColor = "#ccc";
 		document.getElementById("about").style.backgroundSize = "50px";
-		document.getElementById("about").style.color = "#fff";
-		document.getElementById("about").style.borderImage = "url(img/grey.png) 30 stretch";
-		document.getElementById("shop").style.backgroundImage = "url(img/grey.png)";
+		// document.getElementById("about").style.color = "#fff";
+		// document.getElementById("about").style.borderImage = "url(img/grey.png) 30 stretch";
+		document.getElementById("shop").style.backgroundColor = "#ccc";
 		document.getElementById("shop").style.backgroundSize = "50px";
-		document.getElementById("shop").style.color = "#fff";
-		document.getElementById("shop").style.borderImage = "url(img/grey.png) 30 stretch";
+		// document.getElementById("shop").style.color = "#fff";
+		// document.getElementById("shop").style.borderImage = "url(img/grey.png) 30 stretch";
 		document.getElementById("overlay").style.backgroundColor = "rgba(0,0,0,.5)";
 		// document.getElementById("welcome").style.color = "#789dfd";
 }
