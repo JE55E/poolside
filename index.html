@@ -108,6 +108,7 @@
 
 		div.circ01 img {
 			width: 125px;
+			z-index: 1;
 		}
 
 		div#bod { 
@@ -116,6 +117,8 @@
 			left: 0; 
 			width: 100%; 
 			z-index: -1; 
+			
+			opacity: 1;
 		}
 
 		div.blue-tile { 
@@ -175,6 +178,10 @@
 			height: 100%; 
 			width: 100%; 
 			background-color: rgba(0,0,0,0); 
+			background-image: url(https://media.giphy.com/media/3oEdvaxmd15YTHy6Uo/giphy.gif);
+			background-size:cover;
+			opacity: .25;
+			z-index: -1;
 		} 
 
 		p#welcome { 
@@ -269,7 +276,7 @@
 </body>
 <script>
 // Nighttime by the pool
-	if (new Date().getHours() >= 18 || new Date().getHours() <= 7) {
+	if (new Date().getHours() >= 8 || new Date().getHours() <= 7) {
 		document.getElementById("sun").style.backgroundColor = "#ccc";
 		document.getElementById("sun").style.backgroundImage = "url(img/grey.png)";
 		document.getElementById("sun").style.backgroundSize = "50px"
