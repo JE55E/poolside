@@ -41,7 +41,7 @@
 			padding: 5px 20px; 
 			float: right; 
 			background-color: #fff;
-			box-shadow: 1px 1px 2px #dcf5f5;
+			box-shadow: -1px 1px 2px #6699cc;
 			border-radius: 50px;
 		}
 
@@ -185,6 +185,16 @@
 			/*transform: rotate(180deg);*/
 		} 
 
+		div#overlay-night {
+			position: fixed; 
+			top: 0; 
+			left: 0; 
+			height: 100%; 
+			width: 100%; 
+			background-color: rgba(0,0,0,0);
+			z-index: -.5;
+		}
+
 		p#welcome { 
 			font-size: 1.25em; 
 			color: #789dfd; 
@@ -274,6 +284,7 @@
 	</div>
 
 	<div id="overlay"></div>
+	<div id="overlay-night"></div>
 </body>
 <script>
 // Nighttime by the pool
@@ -283,15 +294,18 @@
 		document.getElementById("sun").style.backgroundSize = "50px"
 		document.getElementById("sun").style.boxShadow = "0 10px 75px #fff";
 		document.getElementById("bod").style.backgroundColor = "#000f7b";
-		document.getElementById("about").style.backgroundColor = "#e4f4ff";
+		document.getElementById("about").style.backgroundColor = "#000f7b";
 		document.getElementById("about").style.backgroundSize = "50px";
-		// document.getElementById("about").style.color = "#fff";
-		// document.getElementById("about").style.borderImage = "url(img/grey.png) 30 stretch";
-		document.getElementById("shop").style.backgroundColor = "#e4f4ff";
+		document.getElementById("about").style.color = "#6699cc";
+		document.getElementById("about").style.backgroundImage = "url(img/tiles/night-blue.png)";
+		document.getElementById("about").style.border = "none";
+		document.getElementById("shop").style.backgroundColor = "#000f7b";
 		document.getElementById("shop").style.backgroundSize = "50px";
-		// document.getElementById("shop").style.color = "#fff";
-		// document.getElementById("shop").style.borderImage = "url(img/grey.png) 30 stretch";
-		document.getElementById("overlay").style.backgroundColor = "rgba(0,0,0,.5)";
+		document.getElementById("shop").style.color = "#6699cc";
+		document.getElementById("shop").style.backgroundImage = "url(img/tiles/night-blue.png)";
+		document.getElementById("shop").style.border = "none";
+		// document.getElementById("shop").style.borderImage = "url(img/medium-blue.png) 30 stretch";
+		document.getElementById("overlay-night").style.backgroundColor = "rgba(0,0,0,.6)";
 		// document.getElementById("welcome").style.color = "#789dfd";
 }
 
