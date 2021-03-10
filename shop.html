@@ -14,12 +14,8 @@ body {
 	font-family: 'Inconsolata', monospace;
 	text-shadow: 0 0 2px #789dfd;
 	color: #000;
-	margin: 0;
-	/*text-shadow: 0 0 2px #789dfd;
-	color: #2d66fc;*/
+	text-align: center;
 }
-
-div { margin: 0 auto; display: block; }
 
 /*header*/
 header { 
@@ -32,8 +28,12 @@ header {
 	position: relative; 
 	text-align: left;
 	text-shadow: none;
+	margin-bottom: 50px;
 	/*border-bottom: 2px dashed #000;*/
 }
+/*div { 
+	display: inline-block; 
+}*/
 
 a { 
 	font-size: 1em; 
@@ -75,15 +75,19 @@ a#home:hover {
 	background-size: 50px; 
 }
 
-#page-wrap {
-	display: block;
-	margin-right: auto;
-	margin-left: auto;
+.page-content {
+	/*margin: 0 auto;
+	display: block;*/
+}
+
+.page-wrap {
+	display: inline-block;
+	width: 25%;
 	text-align: center;
 }
 
 .project-wrap { 
-	width: 25%; 
+	/*width: 25%; */
 	padding: 3% 0%;
 	margin: 0;
 	display: inline-block;
@@ -115,7 +119,7 @@ p.print-number {
 }
 
 .img-wrap {
-	width: 100%;
+	width: 75%;
 }
 
 div.img-wrap a { 
@@ -155,34 +159,78 @@ a#shop {
 
 /*media queries*/
 
-@media screen and (max-width: 960px) { 
+@media screen and (max-width: 720px) { 
 
 	header {margin-bottom: 45px;}
 	.project-wrap {
-		width: 80%;	
+		width: 100%;	
+		margin-top: 50px;
 	}
 
 	a {margin: 0;}
+
+	.page-wrap {
+		display: block;
+		width: 90%;
+		text-align: center;
+		margin: auto;
+	}
+
+	span {
+		width: 50%;
+	}
+
+.img-wrap {
+	width: 100%;
 }
+}
+
 
 </style>
 </head>
 <body>
+		<div class="page-content">
 	<header>
 		<a id="home" href="index.html"></a>
 		<a id="about" href="about.html">about</a>
 		<a id="shop" href="shop.html">shop</a>
 	</header>
-	<div id="page-wrap">
-	<!-- SPIDERS DIVs -->
-		<div id="psp1" class="project-wrap">
-			<div class="img-wrap">
-				<p class="project-title"><i>Make Friends With Spiders</i></p><p class="artist-name">Amy Austick</p>
-				<p class="print-number">psp1, 14 Feb 2021</p>
-				<a id="spiders" href="mfws.html"><img src="img/spiders/72_house.jpg"></a>
+		<div class="page-wrap">
+		<!-- p2p3 -->
+			<div id="psp3" class="project-wrap">
+				<div class="img-wrap">
+					<p class="project-title"><i>sparks through the stubble</i></p><p class="artist-name">Peony Gent</p>
+					<p class="print-number">psp3, 10 March 2021</p>
+					<a id="peony-jarman" href="sparks-through-the-stubble.html"><img src="img/peony/jarman_scan_color_thumb.jpg"></a>
+				</div>
+				<span>click to purchase</span>
 			</div>
-			<span>click to browse collection</span>
 		</div>
+
+		<div class="page-wrap">
+		<!-- p2p2 -->
+			<div id="psp2" class="project-wrap">
+				<div class="img-wrap">
+					<p class="project-title"><i>so ugly so old</i></p><p class="artist-name">Peony Gent</p>
+					<p class="print-number">psp2, 10 March 2021</p>
+					<a id="peony-woolf" href="so-ugly-so-old.html"><img src="img/peony/woolf_scan_thumbnail.jpg"></a>
+				</div>
+				<span>click to purchase</span>
+			</div>
+		</div>
+
+		<div class="page-wrap">
+		<!-- psp1 -->
+			<div id="psp1" class="project-wrap">
+				<div class="img-wrap">
+					<p class="project-title"><i>Make Friends With Spiders</i></p><p class="artist-name">Amy Austick</p>
+					<p class="print-number">psp1, 14 Feb 2021</p>
+					<a id="spiders" href="mfws.html"><img src="img/spiders/72_house.jpg"></a>
+				</div>
+				<span>click to browse collection</span>
+			</div>
+		</div>
+
 	</div>
 </body>
 <script></script>
