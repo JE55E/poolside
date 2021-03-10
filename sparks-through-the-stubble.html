@@ -12,41 +12,61 @@
     body { 
       text-align: center; 
       font-family: 'Inconsolata', monospace;
-      /*color: #789dfd;*/
+      margin: 0;
     }
 
-    header {
-      margin-bottom: 25px;
+    /*header*/
+    header { 
+      background-size: 100px; 
+      top: 0; 
+      padding: 25px 25px 50px 25px; 
+      /*background-color:#778899; */
+      z-index: 100; 
+      position: relative; 
+      text-align: left;
+      text-shadow: none;
+      margin-bottom: 50px;
     }
 
     header a { 
-      text-decoration: none; 
       font-size: 2em; 
-      color: rgba(202, 186, 166, 1);
-      border-radius: 50%;
+      text-decoration: none; 
+      margin-left: 25px; 
+      border: 3px solid transparent; 
+      border-image: url(img/tiles/yellow.png) 30 stretch; 
+      padding: 5px 10px; 
+      float: right; 
+      background-image: url(img/tiles/yellow.png);
+      color: #789dfd; 
     }
 
+    a:hover { 
+      background-image: none; 
+      color: #cabaa6; 
+      background-color: #fff; 
+      border: 3px solid #fff;
+    }
+
+    /*projects*/
     a#home { 
-      font-size:2em; 
+      /*font-size:2em; */
       text-decoration: none; 
-      color:#ffe62d; 
-      margin-left: auto; 
-      margin-right: auto; 
+      color: #ffe62d; 
       display: block; 
       height: 24px; 
       width: 24px; 
       background-image: url(img/tiles/yellow.png); 
       background-size: 50px;
+      border-radius: 50%;
+      float: left;
+      border: none;
+      padding: 0;
     }
 
     a#home:hover { 
       background-image: url(img/tiles/sea-foam.png); 
       background-size: 50px; 
     }
-
-    a { color: #2dafff; }
-
-    a:hover { color: #000; }
 
     img { width: 100%; }
 
@@ -58,12 +78,16 @@
     p.available { color: #2dafff; }
 
     @media screen and (max-width: 720px) { 
-      
+      header a {font-size: 1em;}
     }
   </style>
 </head>
   <body>
-    <header><a id="home" href="index.html"></a></header>
+    <header>
+    <a id="home" href="index.html"></a>
+    <a id="about" href="about.html">about</a>
+    <a id="shop" href="shop.html">shop</a>
+  </header>
     <div id='product-component-1615408315521'></div>
 <script type="text/javascript">
 /*<![CDATA[*/

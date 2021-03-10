@@ -10,7 +10,6 @@
 	<style>
 		@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap');
 		@import url('https://fonts.googleapis.com/css2?family=Sunshiney&display=swap');
-		
 
 		body { 
 			font-family: 'Inconsolata', monospace; 
@@ -21,41 +20,62 @@
 			/*cursor:url(img/leafy-try.png) 15 -10, auto;*/
 		}
 
-		header { 
-			background-size: 100px; 
-			top: 0; 
-			padding: 25px 25px 50px 25px; 
-			text-align: left; 
-			z-index: 100; 
-			position: relative; 
-			text-align: left;
-		}
+		/*header*/
+    header { 
+      background-size: 100px; 
+      top: 0; 
+      padding: 25px 25px 50px 25px; 
+      /*background-color:#778899; */
+      z-index: 100; 
+      position: relative; 
+      text-align: left;
+      text-shadow: none;
+      margin-bottom: 50px;
+      /*border-bottom: 2px dashed #000;*/
+    }
 
-		a { 
-			font-size: 1em; 
-			font-weight: 600;
-			text-decoration: none; 
-			color: #136BB2; 
-			margin-left: 25px; 
-			border: 3px solid #136BB2;
-			padding: 5px 20px; 
-			float: right; 
-			background-color: #fff;
-			box-shadow: -1px 1px 2px #6699cc;
-			border-radius: 50px;
-		}
+    a { 
+      font-size: 2em; 
+      text-decoration: none; 
+      margin-left: 25px; 
+      border: 3px solid transparent; 
+      border-image: url(img/tiles/yellow.png) 30 stretch; 
+      padding: 5px 10px; 
+      float: right; 
+      /*background-image: url(img/tiles/yellow.png);*/
+      color: #789dfd; 
+      background-color: rgba(255,255,255,1); 
+      border: 3px solid #789dfd;
+      box-shadow: -2px 3px 1px #fff;
+    }
 
-		a:hover { 
-			background-image: none; 
-			color: #0089e4; 
-			background-color: #e4f4ff; 
-			border: 3px solid #136BB2;
-			box-shadow: 1px 1px 2px #e4f4ff;
-		}
+    a:hover { 
+      background-image: none; 
+      color: #cabaa6; 
+      background-color: #fff; 
+      border: 3px solid #cabaa6;
+    }
 
-		a#about {}
+    /*projects*/
+    a#home { 
+      /*font-size:2em; */
+      text-decoration: none; 
+      color: #ffe62d; 
+      display: block; 
+      height: 24px; 
+      width: 24px; 
+      background-image: url(img/tiles/yellow.png); 
+      background-size: 50px;
+      border-radius: 50%;
+      float: left;
+      border: none;
+      padding: 0;
+    }
 
-		a#store {}
+    a#home:hover { 
+      background-image: url(img/tiles/sea-foam.png); 
+      background-size: 50px; 
+    }  
 
 		/*FLOATY*/
 		div.circ01 {
@@ -245,6 +265,7 @@
 			}
 
 			a { 
+				font-size: 1em;
 				display: block; 
 				margin-left: auto;
 				margin-right: auto; 
@@ -271,7 +292,7 @@
 </head>
 <body id="" class="a">
 	<header>
-		<!-- <p id="welcome" class="circ01"><i>Welcome to Poolside</i></p> -->
+		<!-- <a id="home" href="index.html"></a> -->
 		<a id="about" href="about.html">about</a>
 		<a id="shop" href="shop.html">shop</a>
 	</header>

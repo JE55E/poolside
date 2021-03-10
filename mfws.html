@@ -8,50 +8,79 @@
 <link rel="icon" href="sun-pika.png">
 <style>
 
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap');
 
-body { 
-	font-family: 'Inconsolata', monospace;
-	text-shadow: 0 0 2px #789dfd;
-	color: #000;
-}
+	body { 
+		font-family: 'Inconsolata', monospace;
+		text-shadow: 0 0 2px #789dfd;
+		color: #000;
+		margin: 0;
+	}
 
-header {
-	margin-bottom: 25px;
-}
+	/*header*/
+    header { 
+      /*background-image: url(img/beige.png); */
+      background-size: 100px; 
+      top: 0; 
+      padding: 25px 25px 50px 25px; 
+      /*background-color:#778899; */
+      z-index: 100; 
+      position: relative; 
+      text-align: left;
+      text-shadow: none;
+      margin-bottom: 50px;
+      /*border-bottom: 2px dashed #000;*/
+    }
+	   
+	  header a {
+	  	font-size: 2em; 
+      text-decoration: none; 
+      margin-left: 25px; 
+      border: 3px solid transparent; 
+      padding: 5px 10px; 
+      float: right; 
+      color: #789dfd; 
+	  	border-image: url(img/tiles/yellow.png) 30 stretch; 
+      background-image: url(img/tiles/yellow.png);
+	  }
 
-header a { 
-	text-decoration: none; 
-	font-size: 2em; 
-	color: rgba(202, 186, 166, 1);
-	border-radius: 50%;
-}
+    a { 
+      /*font-size: 2em; 
+      text-decoration: none; 
+      margin-left: 25px; 
+      border: 3px solid transparent; 
+      padding: 5px 10px; 
+      float: right; 
+      color: #789dfd; */
+    }
 
-a#home { 
-	font-size:2em; 
-	text-decoration: none; 
-	color: #ffe62d; 
-	margin-left: auto; 
-	margin-right: auto; 
-	display: block; 
-	height: 24px; 
-	width: 24px; 
-	background-image: url(img/tiles/yellow.png); 
-	background-size: 50px;
-}
+    a:hover { 
+      background-image: none; 
+      color: #cabaa6; 
+      background-color: #fff; 
+      /*border: 3px solid #fff;*/
+    }
 
-a#home:hover { 
-	background-image: url(img/tiles/sea-foam.png); 
-	background-size: 50px; 
-}
+    /*projects*/
+    a#home { 
+      /*font-size:2em; */
+      text-decoration: none; 
+      color: #ffe62d; 
+      display: block; 
+      height: 24px; 
+      width: 24px; 
+      background-image: url(img/tiles/yellow.png); 
+      background-size: 50px;
+      border-radius: 50%;
+      float: left;
+      border: none;
+      padding: 0;
+    }
 
-a { 
-	color: #000; 
-}
-
-a:hover { 
-	color: #2dafff; 
-}
+    a#home:hover { 
+      background-image: url(img/tiles/sea-foam.png); 
+      background-size: 50px; 
+    }  
 
 #collection-text {
 	/*text-shadow: 0 0 2px #789dfd;
@@ -123,7 +152,11 @@ div.img-wrap a:hover > img {
 </style>
 </head>
 <body>
-	<header><a id="home" href="index.html"></a></header>
+	<header>
+      <a id="home" href="index.html"></a>
+      <a id="about" href="about.html">about</a>
+      <a id="shop" href="shop.html">shop</a>
+    </header>
 	<div id="page-wrap">
 		<p id="collection-text">• <i>MAKE FRIENDS WITH SPIDERS</i> •
 			<br>
